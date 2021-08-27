@@ -5,7 +5,7 @@ const addPeople = function () {
     let namesNode = document.querySelector('#name')
     let printName = document.createElement('div')
     printName.innerHTML = namesNode.value
-    printName.classList.add("member-name ")
+    printName.classList.add("member-name", 'list-group')
     document.getElementsByTagName('body')[0].appendChild(printName)
 }
 
@@ -23,16 +23,29 @@ const addTeamlist = function () {
     }
 }
 
-
-
 //devide teams
 const randomMembers = function () {
 
     for (let i = 0; i < participantsNode.length; i++) {
         let participant = Math.floor(Math.random() * participantsNode.length)
-
+        checkingParticipants(participant)
     }
 }
 
 //sort participans in teams
 
+function checkingParticipants(_participant) {
+    let participantsNode = document.querySelectorAll('.participant')
+    for (let i = 0; i < participantsNode.length; i++) {
+
+
+        if (participantsNode[_participant].innerHTML !== participantsNode[i].innerHTML) {
+
+            console.log(participantsNode[_participant].innerHTML)
+
+        } else {
+        }
+
+    }
+
+}
